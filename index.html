@@ -1,0 +1,564 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>What About Bob's Tree Service | Tree Removal, Trimming & Emergency Service</title>
+    <meta
+      name="description"
+      content="Family-owned tree removal, trimming, stump grinding, and 24-hour emergency tree service across Orange, Seminole, and Volusia counties."
+    />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="launch-curtain" id="launchCurtain">
+      <div class="launch-card">
+        <div class="launch-mark" aria-hidden="true">
+          <svg class="crest crest-large" viewBox="0 0 320 320" role="img" aria-label="What About Bob's Tree Service crest">
+            <defs>
+              <linearGradient id="crestGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#ffd98a" />
+                <stop offset="100%" stop-color="#79c553" />
+              </linearGradient>
+            </defs>
+            <circle cx="160" cy="160" r="132" class="crest-ring crest-ring-outer" />
+            <circle cx="160" cy="160" r="110" class="crest-ring crest-ring-middle" />
+            <circle cx="160" cy="160" r="86" class="crest-core" />
+            <path class="crest-canopy" d="M98 152c0-32 27-58 62-58 9 0 18 2 26 6 9-13 24-21 42-21 30 0 54 24 54 54 0 31-25 55-57 55H130c-18 0-32-15-32-36z" />
+            <path class="crest-trunk" d="M151 155h18l11 74h-40z" />
+            <path class="crest-root" d="M124 233c18-10 32-15 56-15 18 0 33 3 44 8" />
+            <path class="crest-arc crest-arc-left" d="M68 202c12 18 27 31 45 41" />
+            <path class="crest-arc crest-arc-right" d="M253 202c-12 18-27 31-45 41" />
+          </svg>
+        </div>
+        <p class="eyebrow">Family owned and operated</p>
+        <h1>Central Florida tree care with stronger first impressions.</h1>
+        <p>
+          Tree removal, trimming, stump grinding, and 24-hour emergency service for Orange,
+          Seminole, and Volusia county homeowners who need fast help and dependable cleanup.
+        </p>
+        <div class="launch-actions">
+          <button id="enterButton" class="primary-button" type="button">Enter site</button>
+          <button id="playIntroButton" class="secondary-button" type="button">Play welcome</button>
+          <button id="toggleMusicButtonLaunch" class="ghost-button" type="button">Soundtrack off</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="ambient-layer ambient-layer-a" aria-hidden="true"></div>
+    <div class="ambient-layer ambient-layer-b" aria-hidden="true"></div>
+    <div class="ambient-grid" aria-hidden="true"></div>
+    <div class="forest-depth" aria-hidden="true">
+      <div class="depth-band depth-band-a"></div>
+      <div class="depth-band depth-band-b"></div>
+      <div class="depth-band depth-band-c"></div>
+    </div>
+    <div class="leaf-field" aria-hidden="true">
+      <span class="leaf leaf-a"></span>
+      <span class="leaf leaf-b"></span>
+      <span class="leaf leaf-c"></span>
+      <span class="leaf leaf-d"></span>
+      <span class="leaf leaf-e"></span>
+      <span class="leaf leaf-f"></span>
+    </div>
+    <canvas id="paper-hero-stage" class="paper-stage" aria-hidden="true"></canvas>
+
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="What About Bob's Tree Service">
+        <span class="brand-mark" aria-hidden="true">
+          <svg class="crest crest-small" viewBox="0 0 320 320">
+            <circle cx="160" cy="160" r="132" class="crest-ring crest-ring-outer" />
+            <circle cx="160" cy="160" r="110" class="crest-ring crest-ring-middle" />
+            <circle cx="160" cy="160" r="86" class="crest-core" />
+            <path class="crest-canopy" d="M98 152c0-32 27-58 62-58 9 0 18 2 26 6 9-13 24-21 42-21 30 0 54 24 54 54 0 31-25 55-57 55H130c-18 0-32-15-32-36z" />
+            <path class="crest-trunk" d="M151 155h18l11 74h-40z" />
+            <path class="crest-root" d="M124 233c18-10 32-15 56-15 18 0 33 3 44 8" />
+          </svg>
+        </span>
+        <span class="brand-copy">
+          <strong>What About Bob's</strong>
+          <small>Tree Service</small>
+        </span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <a href="#services">Services</a>
+        <a href="#service-area">Service area</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#savings">Savings</a>
+        <a href="#estimate">Estimate</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-button" type="button" id="toggleMusicButtonHeader">Music off</button>
+        <button class="icon-button" type="button" id="playIntroButtonHeader">Play welcome</button>
+        <a class="phone-link" href="tel:+14072601579">(407) 260-1579</a>
+      </div>
+    </header>
+
+    <main class="page-shell" id="top">
+      <section class="hero reveal" id="hero" data-scene="scene-1">
+        <div class="hero-copy">
+          <p class="eyebrow">Licensed and insured | free estimates | 24-hour emergency service</p>
+          <h1>
+            Tree removal and storm-ready care
+            <span>built for Central Florida properties.</span>
+          </h1>
+          <p class="lede">
+            Family owned and operated with more than 20 years of experience serving Orange,
+            Seminole, and Volusia counties. From difficult removals to routine trimming, high-lift
+            access, stump grinding, and cleanup, Bob and Dawn make it easy to call, schedule, and
+            get the job handled with confidence.
+          </p>
+          <div class="hero-actions">
+            <a class="primary-button" href="tel:+14072601579">Call for free estimate</a>
+            <a class="secondary-button" href="#service-area">Explore service area</a>
+          </div>
+          <div class="chip-row">
+            <span>20+ years experience</span>
+            <span>55 ft high-lift reach</span>
+            <span>Tree removal and trimming</span>
+            <span>Stump grinding and cleanup</span>
+            <span>Serving 24 listed cities</span>
+          </div>
+        </div>
+
+        <div class="hero-stage tilt-card">
+          <div class="hero-visual-stack">
+            <div class="crest-chamber">
+              <div class="crest-orbit"></div>
+              <svg class="crest crest-hero" viewBox="0 0 320 320" role="img" aria-label="What About Bob's Tree Service crest">
+                <circle cx="160" cy="160" r="132" class="crest-ring crest-ring-outer" />
+                <circle cx="160" cy="160" r="110" class="crest-ring crest-ring-middle" />
+                <circle cx="160" cy="160" r="86" class="crest-core" />
+                <path class="crest-canopy" d="M98 152c0-32 27-58 62-58 9 0 18 2 26 6 9-13 24-21 42-21 30 0 54 24 54 54 0 31-25 55-57 55H130c-18 0-32-15-32-36z" />
+                <path class="crest-trunk" d="M151 155h18l11 74h-40z" />
+                <path class="crest-root" d="M124 233c18-10 32-15 56-15 18 0 33 3 44 8" />
+                <path class="crest-arc crest-arc-left" d="M68 202c12 18 27 31 45 41" />
+                <path class="crest-arc crest-arc-right" d="M253 202c-12 18-27 31-45 41" />
+              </svg>
+            </div>
+            <figure class="hero-image-frame">
+              <img src="./assets/generated/bob-canopy-hero.png" alt="Canopy and tree-care visual direction" />
+            </figure>
+            <figure class="hero-proof-shot">
+              <img src="./assets/source/2244456_orig.jpg" alt="What About Bob's tree service equipment in the field" />
+            </figure>
+          </div>
+          <div class="hero-quickcards">
+            <article class="quickcard">
+              <p>Coverage</p>
+              <strong>Orange, Seminole, Volusia</strong>
+            </article>
+            <article class="quickcard">
+              <p>Emergency work</p>
+              <strong>24-hour response</strong>
+            </article>
+            <article class="quickcard">
+              <p>Reach</p>
+              <strong>55 ft high lift access</strong>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="authority-strip reveal" data-scene="scene-1">
+        <article>
+          <span>20+</span>
+          <p>years of family-owned tree service experience</p>
+        </article>
+        <article>
+          <span>3</span>
+          <p>county footprint anchored around Sanford</p>
+        </article>
+        <article>
+          <span>24</span>
+          <p>listed cities on the current public service page</p>
+        </article>
+        <article>
+          <span>55 ft</span>
+          <p>high-lift reach for difficult-access jobs</p>
+        </article>
+        <article>
+          <span>Free</span>
+          <p>estimates plus live specials and seasonal offers</p>
+        </article>
+      </section>
+
+      <section class="atlas-section reveal" id="service-area" data-scene="scene-2">
+        <div class="section-head">
+          <p class="eyebrow">Service atlas</p>
+          <h2>Service counties and city coverage, centered where the work happens.</h2>
+          <p>
+            The live public service list names Orange, Seminole, and Volusia counties, with Sanford
+            at the center and a long list of nearby cities already being served.
+          </p>
+        </div>
+
+        <div class="atlas-layout">
+          <div class="atlas-card tilt-card">
+            <div class="atlas-toolbar">
+              <div class="atlas-tag">
+                <strong>Service core</strong>
+                <span>Sanford, Orlando, Lake Mary, Altamonte Springs, Winter Park, and more</span>
+              </div>
+              <a
+                class="atlas-open-link"
+                href="https://www.google.com/maps/search/?api=1&query=Sanford%2C%20Florida"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Open in Google Maps
+              </a>
+            </div>
+            <div class="atlas-frame">
+              <svg id="countyAtlas" class="county-atlas" viewBox="0 0 900 640" role="img" aria-label="Map of Orange, Seminole, and Volusia county service area"></svg>
+            </div>
+            <div class="atlas-legend">
+              <span><i class="legend-dot legend-orange"></i> Orange County</span>
+              <span><i class="legend-dot legend-seminole"></i> Seminole County</span>
+              <span><i class="legend-dot legend-volusia"></i> Volusia County</span>
+              <span><i class="legend-dot legend-hub"></i> Sanford hub</span>
+            </div>
+          </div>
+
+          <div class="atlas-sidebar">
+            <div class="county-card-grid" id="countyCards"></div>
+            <div class="city-cloud-wrap">
+              <div class="city-cloud-head">
+                <h3>Highlighted service cities</h3>
+                <p>Direct map links for the main footprint pulled into the atlas.</p>
+              </div>
+              <div class="city-cloud" id="cityCloud"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="services-section reveal" id="services" data-scene="scene-2">
+        <div class="section-head">
+          <p class="eyebrow">Services</p>
+          <h2>Clear service lanes for homeowners, landlords, and property managers.</h2>
+          <p>
+            The current website already names the work. This layout simply makes it easier for
+            someone to find their need, trust the crew, and call without digging.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card tilt-card">
+            <span class="service-icon">01</span>
+            <h3>Emergency tree removal</h3>
+            <p>24-hour emergency support for storm damage, fallen limbs, and hazard trees.</p>
+          </article>
+          <article class="service-card tilt-card">
+            <span class="service-icon">02</span>
+            <h3>Tree trimming and thinning</h3>
+            <p>Routine canopy work to improve airflow, safety, shape, and curb appeal.</p>
+          </article>
+          <article class="service-card tilt-card">
+            <span class="service-icon">03</span>
+            <h3>Stump grinding</h3>
+            <p>Removal and cleanup options that leave the yard looking finished instead of half-done.</p>
+          </article>
+          <article class="service-card tilt-card">
+            <span class="service-icon">04</span>
+            <h3>55 ft high-lift access</h3>
+            <p>Extra reach for difficult locations, backyard work, and jobs that need safer access.</p>
+          </article>
+          <article class="service-card tilt-card">
+            <span class="service-icon">05</span>
+            <h3>Bobcat, crane, and cleanup support</h3>
+            <p>Equipment-backed jobs with debris handling, cleanup, and stronger job-site control.</p>
+          </article>
+          <article class="service-card tilt-card">
+            <span class="service-icon">06</span>
+            <h3>Firewood and mulch add-ons</h3>
+            <p>Seasoned firewood, free mulch with tree work, and extra value from the same visit.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="graph-section reveal" id="why-bob" data-scene="scene-3">
+        <div class="section-head">
+          <p class="eyebrow">Visual proof</p>
+          <h2>Three data moments that make the service story easier to trust.</h2>
+          <p>
+            These animated blocks keep the page feeling premium while staying tied to what the
+            business actually promises today.
+          </p>
+        </div>
+
+        <div class="graph-grid">
+          <article class="graph-card tilt-card">
+            <div class="graph-card-head">
+              <p>County footprint</p>
+              <strong>Three county service podium</strong>
+            </div>
+            <div class="podium-graph" aria-hidden="true">
+              <div class="podium podium-orange" style="--bar-height: 72%">
+                <span>Orange</span>
+              </div>
+              <div class="podium podium-seminole" style="--bar-height: 88%">
+                <span>Seminole</span>
+              </div>
+              <div class="podium podium-volusia" style="--bar-height: 66%">
+                <span>Volusia</span>
+              </div>
+            </div>
+            <p class="graph-note">
+              Built around the live public county list, with Sanford as the central operating hub.
+            </p>
+          </article>
+
+          <article class="graph-card tilt-card">
+            <div class="graph-card-head">
+              <p>Access and reach</p>
+              <strong>55 ft equipment advantage</strong>
+            </div>
+            <div class="reach-graph" aria-hidden="true">
+              <div class="reach-column">
+                <div class="reach-fill" style="--fill-height: 84%"></div>
+                <strong>55 ft</strong>
+                <span>high-lift reach</span>
+              </div>
+              <div class="reach-lines"></div>
+            </div>
+            <p class="graph-note">
+              The tree-care page already positions high-reach access as a differentiator for harder
+              locations and dangerous removals.
+            </p>
+          </article>
+
+          <article class="graph-card tilt-card">
+            <div class="graph-card-head">
+              <p>Call path</p>
+              <strong>Fast estimate and emergency flow</strong>
+            </div>
+            <div class="path-graph" aria-hidden="true">
+              <div class="path-step is-active">
+                <span>01</span>
+                <p>Call Bob or Dawn</p>
+              </div>
+              <div class="path-rail"></div>
+              <div class="path-step is-active">
+                <span>02</span>
+                <p>Free estimate</p>
+              </div>
+              <div class="path-rail"></div>
+              <div class="path-step is-active">
+                <span>03</span>
+                <p>Schedule the work</p>
+              </div>
+            </div>
+            <p class="graph-note">
+              The live homepage promises free estimates and emergency help, so the visual path keeps
+              those promises front and center.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="gallery-section reveal" id="gallery" data-scene="scene-3">
+        <div class="section-head">
+          <p class="eyebrow">Gallery</p>
+          <h2>Real field proof first, polished presentation second.</h2>
+          <p>
+            The public website already has authentic work photos and equipment shots. This layout
+            gives them the space and hierarchy they deserve.
+          </p>
+        </div>
+
+        <div class="gallery-grid">
+          <figure class="gallery-card gallery-card-tall tilt-card">
+            <img src="./assets/source/1345570948.png" alt="Large tree-service project in progress" />
+            <figcaption>Real job-site proof from the current public gallery.</figcaption>
+          </figure>
+          <figure class="gallery-card tilt-card">
+            <img src="./assets/source/1347995083.png" alt="Tree removal work from What About Bob's Tree Service" />
+            <figcaption>Tree removal and trimming work, repackaged with a cleaner visual system.</figcaption>
+          </figure>
+          <figure class="gallery-card tilt-card">
+            <img src="./assets/source/2244456_orig.jpg" alt="High-lift access equipment used by Bob" />
+            <figcaption>High-lift equipment becomes a trust signal when it is shown early and clearly.</figcaption>
+          </figure>
+          <figure class="gallery-card tilt-card">
+            <img src="./assets/source/6495572_orig.jpg" alt="Seasoned firewood stacked for sale" />
+            <figcaption>Firewood, cleanup, and add-on services widen the value of each job.</figcaption>
+          </figure>
+          <figure class="gallery-card tilt-card gallery-card-wide">
+            <img src="./assets/generated/bob-arborist-direction.png" alt="Tree service visual direction artwork" />
+            <figcaption>A premium visual layer can lift the brand without replacing the real proof.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="storm-section reveal" id="storm" data-scene="scene-4">
+        <div class="storm-copy">
+          <p class="eyebrow">Storm readiness</p>
+          <h2>Hurricane-season messaging should feel urgent, clear, and useful.</h2>
+          <p>
+            Bob’s live hurricane page already says the important part: trim and thin trees before
+            the wind has a chance to put a house, fence, or power line at risk. This section turns
+            that advice into a faster, easier-to-scan service message.
+          </p>
+          <div class="storm-checklist">
+            <span>Trim and thin trees before peak storm pressure</span>
+            <span>Remove dead branches and unstable trees early</span>
+            <span>Use high-lift access for dangerous or tight-location work</span>
+          </div>
+        </div>
+
+        <div class="storm-card tilt-card">
+          <div class="storm-curve" aria-hidden="true">
+            <div class="curve-label curve-label-a">Untrimmed canopy risk</div>
+            <div class="curve-label curve-label-b">Prepared tree flow</div>
+            <svg viewBox="0 0 520 300" class="curve-svg">
+              <path class="curve-gridline" d="M40 240H480" />
+              <path class="curve-gridline" d="M40 170H480" />
+              <path class="curve-gridline" d="M40 100H480" />
+              <path class="curve-path curve-path-danger" d="M55 220C150 210 175 192 235 158C308 117 348 96 467 48" />
+              <path class="curve-path curve-path-safe" d="M55 220C136 210 166 196 221 182C300 162 362 142 467 110" />
+            </svg>
+          </div>
+          <div class="storm-card-foot">
+            <strong>Storm prep works best before the first emergency call.</strong>
+            <p>
+              Use the seasonality angle to help homeowners act before limbs are over roofs, fences,
+              and power lines.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="savings-section reveal" id="savings" data-scene="scene-4">
+        <div class="section-head">
+          <p class="eyebrow">Savings and specials</p>
+          <h2>Real offers, elevated into a cleaner trust-building section.</h2>
+        </div>
+
+        <div class="savings-grid">
+          <article class="savings-card tilt-card">
+            <strong>10% senior discount</strong>
+            <p>Keep the senior offer easy to spot instead of burying it in an all-caps text wall.</p>
+          </article>
+          <article class="savings-card tilt-card">
+            <strong>Free stump grinding</strong>
+            <p>Promote stump grinding with qualified tree removals up to the live public cap.</p>
+          </article>
+          <article class="savings-card tilt-card">
+            <strong>Trim 2, get 1 free</strong>
+            <p>Turn the existing trim offer into a simple high-value callout homeowners can act on.</p>
+          </article>
+          <article class="savings-card tilt-card">
+            <strong>$25 referral reward</strong>
+            <p>Make the referral incentive visible so past customers help drive the next calls.</p>
+          </article>
+          <article class="savings-card tilt-card">
+            <strong>10% off jobs over $350</strong>
+            <p>Use the higher-ticket discount as a clean close for medium and larger projects.</p>
+          </article>
+          <article class="savings-card tilt-card">
+            <strong>Free mulch with tree work</strong>
+            <p>Small details like free mulch make the business feel more helpful and complete.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="about-section reveal" id="about" data-scene="scene-4">
+        <div class="about-copy">
+          <p class="eyebrow">About Bob and Dawn</p>
+          <h2>Family-owned service with real equipment, real cleanup, and real local familiarity.</h2>
+          <p>
+            The public site already gives the right trust anchors: family owned and operated, more
+            than 20 years of experience, licensed and insured, climbers available when needed, and
+            the equipment to handle harder jobs without making the homeowner guess.
+          </p>
+        </div>
+        <div class="about-grid">
+          <article class="about-card tilt-card">
+            <strong>Who you reach</strong>
+            <p>Call Bob or Dawn directly instead of chasing a generic lead form into silence.</p>
+          </article>
+          <article class="about-card tilt-card">
+            <strong>What gets handled</strong>
+            <p>Tree removal, trimming, thinning, stump grinding, planting, crane work, and cleanup.</p>
+          </article>
+          <article class="about-card tilt-card">
+            <strong>What builds trust</strong>
+            <p>Family ownership, field photos, licensed and insured status, and strong local service-area clarity.</p>
+          </article>
+          <article class="about-card tilt-card">
+            <strong>What adds value</strong>
+            <p>Free estimates, seasonal offers, firewood, free mulch, and a cleaner call-to-job path.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="estimate-section reveal" id="estimate" data-scene="scene-5">
+        <div class="estimate-copy">
+          <p class="eyebrow">Request service</p>
+          <h2>Talk to Bob or Dawn and get a free estimate started.</h2>
+          <p>
+            Whether the job is urgent or just needs a careful walkthrough, the next step should be
+            obvious the moment someone lands on the page.
+          </p>
+          <div class="contact-stack">
+            <a href="tel:+14072601579">(407) 260-1579</a>
+            <a href="mailto:dawnandbob53086@gmail.com">dawnandbob53086@gmail.com</a>
+            <span>Family-owned and operated in Sanford, Florida</span>
+          </div>
+        </div>
+
+        <form class="estimate-form">
+          <label>
+            Your name
+            <input type="text" placeholder="Homeowner, manager, or property contact" />
+          </label>
+          <label>
+            Service needed
+            <select>
+              <option>Emergency tree response</option>
+              <option>Tree removal</option>
+              <option>Tree trimming or thinning</option>
+              <option>Stump grinding</option>
+              <option>General estimate</option>
+            </select>
+          </label>
+          <label>
+            Property city
+            <input type="text" placeholder="Sanford, Orlando, Lake Mary..." />
+          </label>
+          <label>
+            Tell us about the job
+            <textarea placeholder="Describe the tree, the location, and how urgent the work feels."></textarea>
+          </label>
+          <button class="primary-button" type="button">Request free estimate</button>
+        </form>
+      </section>
+    </main>
+
+    <div class="sticky-callbar">
+      <a href="tel:+14072601579">Call now</a>
+      <a href="#estimate">Free estimate</a>
+    </div>
+
+    <audio id="voiceIntro" preload="auto">
+      <source src="./assets/voice/bob-site-intro.mp3" type="audio/mpeg" />
+      <source src="./assets/voice/bob-site-intro.wav" type="audio/wav" />
+    </audio>
+
+    <audio id="musicBed" preload="auto" loop></audio>
+
+    <script src="./assets/vendor/paper-full.min.js"></script>
+    <script src="./assets/vendor/paper-director.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>

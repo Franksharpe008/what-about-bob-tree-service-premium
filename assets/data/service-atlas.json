@@ -1,0 +1,563 @@
+{
+  "generated_at": "2026-03-15",
+  "source_note": "County geometry filtered from public US county geojson dataset; city coordinates verified from live geocoding during build; Google Maps links provided for user actions.",
+  "hub": {
+    "name": "Sanford, Florida",
+    "lat": 28.8117345,
+    "lon": -81.2680223,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Sanford%2C%20Florida"
+  },
+  "listed_city_count": 24,
+  "listed_cities": [
+    "Aloma",
+    "Avalon Park",
+    "Altamonte Springs",
+    "Apopka",
+    "Baldwin Park",
+    "Casselberry",
+    "Celebration",
+    "DeBary",
+    "DeLand",
+    "Deltona",
+    "Dr. Phillips",
+    "Heathrow",
+    "Kissimmee",
+    "Lakeland",
+    "Lake Mary",
+    "Leesburg",
+    "Longwood",
+    "Maitland",
+    "Orlando",
+    "Oviedo",
+    "Sanford",
+    "Windermere",
+    "Winter Park",
+    "Winter Springs"
+  ],
+  "counties": [
+    {
+      "id": "12095",
+      "name": "Orange County",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -81.65739,
+              28.553122
+            ],
+            [
+              -81.658114,
+              28.68271
+            ],
+            [
+              -81.624731,
+              28.785927
+            ],
+            [
+              -81.592971,
+              28.78597
+            ],
+            [
+              -81.414446,
+              28.784955
+            ],
+            [
+              -81.459695,
+              28.644475
+            ],
+            [
+              -81.459501,
+              28.640285
+            ],
+            [
+              -81.457975,
+              28.640336
+            ],
+            [
+              -81.365289,
+              28.640468
+            ],
+            [
+              -81.357965,
+              28.639187
+            ],
+            [
+              -81.331099,
+              28.639581
+            ],
+            [
+              -81.32865,
+              28.639334
+            ],
+            [
+              -81.327911,
+              28.611268
+            ],
+            [
+              -81.326991,
+              28.610298
+            ],
+            [
+              -80.98725,
+              28.612997
+            ],
+            [
+              -80.88089,
+              28.503633
+            ],
+            [
+              -80.862908,
+              28.347487
+            ],
+            [
+              -81.309571,
+              28.348051
+            ],
+            [
+              -81.513859,
+              28.347374
+            ],
+            [
+              -81.531837,
+              28.347384
+            ],
+            [
+              -81.657268,
+              28.347098
+            ],
+            [
+              -81.65739,
+              28.553122
+            ]
+          ]
+        ]
+      },
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Orange%20County%2C%20Florida"
+    },
+    {
+      "id": "12117",
+      "name": "Seminole County",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -81.210452,
+              28.802453
+            ],
+            [
+              -81.195021,
+              28.792302
+            ],
+            [
+              -81.183198,
+              28.797468
+            ],
+            [
+              -81.178936,
+              28.781886
+            ],
+            [
+              -81.10575,
+              28.828541
+            ],
+            [
+              -80.98725,
+              28.612997
+            ],
+            [
+              -81.326991,
+              28.610298
+            ],
+            [
+              -81.327911,
+              28.611268
+            ],
+            [
+              -81.32865,
+              28.639334
+            ],
+            [
+              -81.331099,
+              28.639581
+            ],
+            [
+              -81.357965,
+              28.639187
+            ],
+            [
+              -81.365289,
+              28.640468
+            ],
+            [
+              -81.457975,
+              28.640336
+            ],
+            [
+              -81.459501,
+              28.640285
+            ],
+            [
+              -81.459695,
+              28.644475
+            ],
+            [
+              -81.414446,
+              28.784955
+            ],
+            [
+              -81.375088,
+              28.863366
+            ],
+            [
+              -81.376006,
+              28.865901
+            ],
+            [
+              -81.373491,
+              28.87025
+            ],
+            [
+              -81.372009,
+              28.869039
+            ],
+            [
+              -81.369692,
+              28.870536
+            ],
+            [
+              -81.368608,
+              28.872921
+            ],
+            [
+              -81.366705,
+              28.87325
+            ],
+            [
+              -81.366158,
+              28.874744
+            ],
+            [
+              -81.366764,
+              28.876619
+            ],
+            [
+              -81.367052,
+              28.878315
+            ],
+            [
+              -81.36694,
+              28.879227
+            ],
+            [
+              -81.24997,
+              28.833106
+            ],
+            [
+              -81.229881,
+              28.832621
+            ],
+            [
+              -81.226003,
+              28.83263
+            ],
+            [
+              -81.222874,
+              28.826862
+            ],
+            [
+              -81.224596,
+              28.822039
+            ],
+            [
+              -81.215898,
+              28.814423
+            ],
+            [
+              -81.216345,
+              28.808302
+            ],
+            [
+              -81.210452,
+              28.802453
+            ]
+          ]
+        ]
+      },
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Seminole%20County%2C%20Florida"
+    },
+    {
+      "id": "12127",
+      "name": "Volusia County",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -81.178936,
+              28.781886
+            ],
+            [
+              -81.183198,
+              28.797468
+            ],
+            [
+              -81.195021,
+              28.792302
+            ],
+            [
+              -81.210452,
+              28.802453
+            ],
+            [
+              -81.216345,
+              28.808302
+            ],
+            [
+              -81.215898,
+              28.814423
+            ],
+            [
+              -81.224596,
+              28.822039
+            ],
+            [
+              -81.222874,
+              28.826862
+            ],
+            [
+              -81.226003,
+              28.83263
+            ],
+            [
+              -81.229881,
+              28.832621
+            ],
+            [
+              -81.24997,
+              28.833106
+            ],
+            [
+              -81.36694,
+              28.879227
+            ],
+            [
+              -81.354554,
+              28.984375
+            ],
+            [
+              -81.502055,
+              29.097802
+            ],
+            [
+              -81.531262,
+              29.176621
+            ],
+            [
+              -81.61234,
+              29.202943
+            ],
+            [
+              -81.641916,
+              29.276766
+            ],
+            [
+              -81.648438,
+              29.290173
+            ],
+            [
+              -81.655677,
+              29.29994
+            ],
+            [
+              -81.667885,
+              29.301488
+            ],
+            [
+              -81.675523,
+              29.310628
+            ],
+            [
+              -81.680903,
+              29.32443
+            ],
+            [
+              -81.561194,
+              29.351686
+            ],
+            [
+              -81.540873,
+              29.356556
+            ],
+            [
+              -81.521764,
+              29.362194
+            ],
+            [
+              -81.518045,
+              29.361868
+            ],
+            [
+              -81.507989,
+              29.364511
+            ],
+            [
+              -81.450892,
+              29.378464
+            ],
+            [
+              -81.433992,
+              29.398552
+            ],
+            [
+              -81.41729,
+              29.261156
+            ],
+            [
+              -81.150081,
+              29.265957
+            ],
+            [
+              -81.155881,
+              29.410954
+            ],
+            [
+              -81.101923,
+              29.427055
+            ],
+            [
+              -81.046678,
+              29.307856
+            ],
+            [
+              -80.995423,
+              29.206052
+            ],
+            [
+              -80.966176,
+              29.14796
+            ],
+            [
+              -80.944376,
+              29.110861
+            ],
+            [
+              -80.907275,
+              29.064262
+            ],
+            [
+              -80.893675,
+              29.036163
+            ],
+            [
+              -80.878275,
+              29.010563
+            ],
+            [
+              -80.787021,
+              28.875266
+            ],
+            [
+              -80.732244,
+              28.791237
+            ],
+            [
+              -80.967895,
+              28.790197
+            ],
+            [
+              -80.964466,
+              28.612992
+            ],
+            [
+              -80.98725,
+              28.612997
+            ],
+            [
+              -81.10575,
+              28.828541
+            ],
+            [
+              -81.178936,
+              28.781886
+            ]
+          ]
+        ]
+      },
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Volusia%20County%2C%20Florida"
+    }
+  ],
+  "cities": [
+    {
+      "name": "Sanford",
+      "state": "Florida",
+      "lat": 28.8117345,
+      "lon": -81.2680223,
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Sanford%2C%20Florida"
+    },
+    {
+      "name": "Orlando",
+      "state": "Florida",
+      "lat": 28.5421218,
+      "lon": -81.379045,
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Orlando%2C%20Florida"
+    },
+    {
+      "name": "Lake Mary",
+      "state": "Florida",
+      "lat": 28.7562749,
+      "lon": -81.322093,
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Lake%20Mary%2C%20Florida"
+    },
+    {
+      "name": "Altamonte Springs",
+      "state": "Florida",
+      "lat": 28.6619154,
+      "lon": -81.3885899,
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Altamonte%20Springs%2C%20Florida"
+    },
+    {
+      "name": "Winter Park",
+      "state": "Florida",
+      "lat": 28.5977707,
+      "lon": -81.3510264,
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Winter%20Park%2C%20Florida"
+    },
+    {
+      "name": "Winter Springs",
+      "state": "Florida",
+      "lat": 28.6987317,
+      "lon": -81.3055188,
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Winter%20Springs%2C%20Florida"
+    },
+    {
+      "name": "Oviedo",
+      "state": "Florida",
+      "lat": 28.6702526,
+      "lon": -81.2084941,
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Oviedo%2C%20Florida"
+    },
+    {
+      "name": "Apopka",
+      "state": "Florida",
+      "lat": 28.6732806,
+      "lon": -81.5116471,
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Apopka%2C%20Florida"
+    },
+    {
+      "name": "DeLand",
+      "state": "Florida",
+      "lat": 29.0281051,
+      "lon": -81.3034183,
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=DeLand%2C%20Florida"
+    },
+    {
+      "name": "DeBary",
+      "state": "Florida",
+      "lat": 28.8830604,
+      "lon": -81.3088385,
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=DeBary%2C%20Florida"
+    }
+  ]
+}

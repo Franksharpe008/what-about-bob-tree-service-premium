@@ -1,0 +1,60 @@
+{
+  "project": "What About Bob's Tree Service Final-State Premium Homepage",
+  "generated_at": "2026-03-15",
+  "lead_reference": {
+    "company_name": "A What About Bobs Tree Service?",
+    "master_rank": 133,
+    "phone": "(407) 260-1579",
+    "website": "https://whataboutbobstreeservice.weebly.com/",
+    "location": "Sanford, FL, 32773",
+    "metro": "Orlando",
+    "state": "FL"
+  },
+  "facts_locked_from_live_site": {
+    "contacts": ["Bob", "Dawn"],
+    "service_counties": ["Orange", "Seminole", "Volusia"],
+    "service_promises": [
+      "family owned and operated",
+      "20+ years experience",
+      "licensed and insured",
+      "free estimates",
+      "24-hour emergency service",
+      "55 ft high-lift reach"
+    ],
+    "public_offers": [
+      "10 percent senior discount",
+      "free stump grinding with qualified tree removal",
+      "trim 2 trees get 1 free",
+      "25 dollar referral reward",
+      "10 percent off jobs over 350 dollars",
+      "free mulch with tree work"
+    ]
+  },
+  "artifacts": {
+    "site_entry": "/Users/franksharpe/Documents/New project/output/what-about-bob-redesign-2026-03-15/index.html",
+    "case_study": "/Users/franksharpe/Documents/New project/output/what-about-bob-redesign-2026-03-15/CASE_STUDY.md",
+    "atlas_data": "/Users/franksharpe/Documents/New project/output/what-about-bob-redesign-2026-03-15/assets/data/service-atlas.json",
+    "hero_image": "/Users/franksharpe/Documents/New project/output/what-about-bob-redesign-2026-03-15/assets/generated/bob-canopy-hero.png",
+    "secondary_image": "/Users/franksharpe/Documents/New project/output/what-about-bob-redesign-2026-03-15/assets/generated/bob-arborist-direction.png",
+    "voice_intro_wav": "/Users/franksharpe/Documents/New project/output/what-about-bob-redesign-2026-03-15/assets/voice/bob-site-intro.wav",
+    "voice_intro_mp3": "/Users/franksharpe/Documents/New project/output/what-about-bob-redesign-2026-03-15/assets/voice/bob-site-intro.mp3",
+    "score_bed": "/Users/franksharpe/Documents/New project/output/what-about-bob-redesign-2026-03-15/assets/music/bob-canopy-score.mp3",
+    "hero_proof": "/Users/franksharpe/Documents/New project/output/what-about-bob-redesign-2026-03-15/final-proof-hero.png",
+    "page_proof": "/Users/franksharpe/Documents/New project/output/what-about-bob-redesign-2026-03-15/final-proof-full.png",
+    "pdf_snapshot": "/Users/franksharpe/Documents/New project/output/what-about-bob-redesign-2026-03-15/what-about-bob-tree-service-premium-preview.pdf"
+  },
+  "verification": {
+    "local_preview_url": "http://127.0.0.1:4318/?preview=1",
+    "browser_checks": [
+      "Homepage hero rendered with curtain bypass preview flag",
+      "Voice intro file rendered and converted to mp3",
+      "Score bed generated and copied to stable asset path",
+      "Google-Maps-linked county atlas data loaded from local json",
+      "Hero screenshot and PDF snapshot exported from headless Chrome"
+    ],
+    "known_notes": [
+      "Headless Chrome logged non-blocking shared-image warnings during capture, but screenshots and PDF still exported successfully.",
+      "The launch curtain remains active for normal browsing and is bypassed only with the preview query during proof capture."
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+artifact,role,path,status
+homepage,final-state site,/Users/franksharpe/Documents/New project/output/what-about-bob-redesign-2026-03-15/index.html,ready
+styles,visual system,/Users/franksharpe/Documents/New project/output/what-about-bob-redesign-2026-03-15/styles.css,ready
+scripts,atlas and interaction logic,/Users/franksharpe/Documents/New project/output/what-about-bob-redesign-2026-03-15/app.js,ready
+atlas,county and city data,/Users/franksharpe/Documents/New project/output/what-about-bob-redesign-2026-03-15/assets/data/service-atlas.json,ready
+voice,welcome narration,/Users/franksharpe/Documents/New project/output/what-about-bob-redesign-2026-03-15/assets/voice/bob-site-intro.mp3,ready
+music,score bed,/Users/franksharpe/Documents/New project/output/what-about-bob-redesign-2026-03-15/assets/music/bob-canopy-score.mp3,ready
+hero-proof,browser screenshot,/Users/franksharpe/Documents/New project/output/what-about-bob-redesign-2026-03-15/final-proof-hero.png,ready
+page-proof,full-page screenshot,/Users/franksharpe/Documents/New project/output/what-about-bob-redesign-2026-03-15/final-proof-full.png,ready
+pdf,send-out snapshot,/Users/franksharpe/Documents/New project/output/what-about-bob-redesign-2026-03-15/what-about-bob-tree-service-premium-preview.pdf,ready
+case-study,client summary,/Users/franksharpe/Documents/New project/output/what-about-bob-redesign-2026-03-15/CASE_STUDY.md,ready
+scope-report,reusable workflow,/Users/franksharpe/Documents/New project/output/what-about-bob-redesign-2026-03-15/FULL_SCOPE_REPORT.md,ready
+internal-report,internal research and tools,/Users/franksharpe/Documents/New project/output/what-about-bob-redesign-2026-03-15/INTERNAL_BUILD_REPORT.md,ready
+manifest,project receipt,/Users/franksharpe/Documents/New project/output/what-about-bob-redesign-2026-03-15/manifest.json,ready
