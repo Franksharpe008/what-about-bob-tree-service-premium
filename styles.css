@@ -899,6 +899,25 @@ section {
   min-height: 420px;
   display: flex;
   flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.graph-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 18%, rgba(255, 217, 138, 0.14), transparent 30%),
+    radial-gradient(circle at 82% 22%, rgba(119, 200, 77, 0.14), transparent 28%),
+    linear-gradient(135deg, transparent 20%, rgba(255, 248, 235, 0.06) 50%, transparent 80%);
+  opacity: 0;
+  transform: translate3d(-8%, 0, 0);
+  pointer-events: none;
+}
+
+.graph-section.is-visible .graph-card::before {
+  animation: graph-sheen 6.4s ease-in-out infinite;
 }
 
 .graph-card-head {
@@ -931,6 +950,7 @@ section {
   border-radius: 18px 18px 12px 12px;
   transform: rotateX(22deg) rotateZ(-4deg);
   box-shadow: 0 24px 30px rgba(0, 0, 0, 0.18);
+  transform-origin: center bottom;
 }
 
 .podium::before {
@@ -977,10 +997,39 @@ section {
   background: linear-gradient(180deg, rgba(153, 210, 255, 0.92), rgba(94, 153, 212, 0.72));
 }
 
+.graph-section.is-visible .podium {
+  animation:
+    podium-rise 1s cubic-bezier(0.2, 0.8, 0.2, 1) backwards,
+    podium-float 4.8s ease-in-out infinite;
+  animation-delay: var(--podium-delay, 0s), calc(1s + var(--podium-delay, 0s));
+}
+
 .reach-graph {
   position: relative;
   overflow: hidden;
   padding: 1rem;
+}
+
+.reach-aura,
+.reach-scan {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.reach-aura {
+  background:
+    radial-gradient(circle at 50% 76%, rgba(239, 170, 57, 0.28), transparent 30%),
+    radial-gradient(circle at 50% 24%, rgba(119, 200, 77, 0.18), transparent 34%);
+  opacity: 0;
+}
+
+.reach-scan {
+  inset: 10px;
+  background: linear-gradient(180deg, transparent 0%, rgba(255, 248, 235, 0.22) 48%, transparent 100%);
+  opacity: 0;
+  transform: translateY(-110%);
+  filter: blur(3px);
 }
 
 .reach-lines {
@@ -1018,6 +1067,25 @@ section {
     inset -12px 0 0 rgba(0, 0, 0, 0.12),
     0 22px 34px rgba(0, 0, 0, 0.22);
   transform: rotateX(16deg);
+  transform-origin: center bottom;
+}
+
+.graph-section.is-visible .reach-fill {
+  animation:
+    reach-grow 1.15s cubic-bezier(0.18, 0.88, 0.22, 1) backwards,
+    reach-float 4.4s ease-in-out infinite 1.15s;
+}
+
+.graph-section.is-visible .reach-lines {
+  animation: reach-grid 4.8s linear infinite;
+}
+
+.graph-section.is-visible .reach-aura {
+  animation: reach-aura 4.2s ease-in-out infinite;
+}
+
+.graph-section.is-visible .reach-scan {
+  animation: reach-scan 3.8s ease-in-out infinite 0.4s;
 }
 
 .reach-column strong {
@@ -1069,11 +1137,174 @@ section {
   color: var(--forest-950);
 }
 
+.graph-section.is-visible .path-step.is-active span {
+  animation: path-node-pulse 2.8s ease-in-out infinite;
+  animation-delay: var(--path-delay, 0s);
+}
+
+.graph-section.is-visible .path-step.is-active p {
+  animation: path-copy-float 2.8s ease-in-out infinite;
+  animation-delay: var(--path-delay, 0s);
+}
+
 .path-rail {
   flex: 1;
   height: 4px;
   border-radius: 999px;
   background: linear-gradient(90deg, rgba(239, 170, 57, 0.6), rgba(119, 200, 77, 0.6));
+  position: relative;
+  overflow: hidden;
+}
+
+.path-rail::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 248, 235, 0.9), transparent);
+  transform: translateX(-120%);
+}
+
+.graph-section.is-visible .path-rail::after {
+  animation: rail-scan 2.6s linear infinite;
+}
+
+@keyframes graph-sheen {
+  0%, 100% {
+    opacity: 0;
+    transform: translate3d(-8%, 0, 0);
+  }
+  18% {
+    opacity: 0.85;
+  }
+  52% {
+    opacity: 0.45;
+    transform: translate3d(8%, 0, 0);
+  }
+  72% {
+    opacity: 0;
+  }
+}
+
+@keyframes podium-rise {
+  0% {
+    opacity: 0;
+    transform: translateY(48px) scaleY(0.45) rotateX(22deg) rotateZ(-4deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scaleY(1) rotateX(22deg) rotateZ(-4deg);
+  }
+}
+
+@keyframes podium-float {
+  0%, 100% {
+    transform: translateY(0) rotateX(22deg) rotateZ(-4deg);
+    box-shadow: 0 24px 30px rgba(0, 0, 0, 0.18);
+  }
+  50% {
+    transform: translateY(-10px) rotateX(22deg) rotateZ(-4deg);
+    box-shadow: 0 34px 40px rgba(0, 0, 0, 0.24);
+  }
+}
+
+@keyframes reach-grow {
+  0% {
+    opacity: 0;
+    transform: scaleY(0.2) rotateX(16deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scaleY(1) rotateX(16deg);
+  }
+}
+
+@keyframes reach-float {
+  0%, 100% {
+    transform: translateY(0) rotateX(16deg);
+    box-shadow:
+      inset -12px 0 0 rgba(0, 0, 0, 0.12),
+      0 22px 34px rgba(0, 0, 0, 0.22);
+  }
+  50% {
+    transform: translateY(-8px) rotateX(16deg);
+    box-shadow:
+      inset -12px 0 0 rgba(0, 0, 0, 0.12),
+      0 28px 44px rgba(0, 0, 0, 0.26);
+  }
+}
+
+@keyframes reach-grid {
+  0% { opacity: 0.32; }
+  50% { opacity: 0.5; }
+  100% { opacity: 0.32; }
+}
+
+@keyframes reach-aura {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(0.96);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.03);
+  }
+}
+
+@keyframes reach-scan {
+  0% {
+    opacity: 0;
+    transform: translateY(-110%);
+  }
+  18% {
+    opacity: 0.55;
+  }
+  62% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(110%);
+  }
+}
+
+@keyframes path-node-pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(255, 217, 138, 0);
+  }
+  40% {
+    transform: scale(1.08);
+    box-shadow: 0 0 26px rgba(255, 217, 138, 0.42);
+  }
+}
+
+@keyframes path-copy-float {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-3px);
+    opacity: 0.96;
+  }
+}
+
+@keyframes rail-scan {
+  0% {
+    transform: translateX(-120%);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(0%);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateX(120%);
+    opacity: 0;
+  }
 }
 
 .gallery-grid {

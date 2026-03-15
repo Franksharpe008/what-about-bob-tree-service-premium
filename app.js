@@ -17,21 +17,34 @@
   const countyCards = document.getElementById("countyCards");
   const cityCloud = document.getElementById("cityCloud");
 
-  const musicTrack = "./assets/music/bob-canopy-score.mp3";
   let musicReady = false;
   let musicOn = false;
   let pendingMusicStart = false;
   let hasEntered = false;
+  let musicRetryTimer = null;
   const searchParams = new URLSearchParams(window.location.search);
 
   if (musicBed) {
-    musicBed.src = musicTrack;
-    musicBed.volume = 0.32;
-    musicBed.addEventListener("canplaythrough", () => {
+    musicBed.volume = 0.4;
+    const markMusicReady = () => {
       musicReady = true;
       syncMusicButtons();
       if (pendingMusicStart && !musicOn) {
-        startMusic(false);
+        void startMusic(false);
+      }
+    };
+    ["loadeddata", "canplay", "canplaythrough"].forEach((eventName) => {
+      musicBed.addEventListener(eventName, markMusicReady);
+    });
+    musicBed.addEventListener("play", () => {
+      musicOn = true;
+      pendingMusicStart = false;
+      syncMusicButtons();
+    });
+    musicBed.addEventListener("pause", () => {
+      if (!musicBed.ended) {
+        musicOn = false;
+        syncMusicButtons();
       }
     });
     musicBed.addEventListener("error", () => {
@@ -44,12 +57,12 @@
     voiceIntro.volume = 1;
     voiceIntro.addEventListener("play", () => {
       if (musicBed && musicOn) {
-        musicBed.volume = 0.18;
+        musicBed.volume = 0.24;
       }
     });
     const restoreMusicVolume = () => {
       if (musicBed && musicOn) {
-        musicBed.volume = 0.32;
+        musicBed.volume = 0.4;
       }
     };
     voiceIntro.addEventListener("ended", restoreMusicVolume);
@@ -88,6 +101,10 @@
   async function startMusic(deferIfNeeded = true) {
     if (!musicBed) return;
     if (musicOn) return;
+    if (musicRetryTimer) {
+      window.clearTimeout(musicRetryTimer);
+      musicRetryTimer = null;
+    }
     try {
       await musicBed.play();
       musicOn = true;
@@ -97,6 +114,11 @@
       if (deferIfNeeded) {
         pendingMusicStart = true;
         musicBed.load();
+        musicRetryTimer = window.setTimeout(() => {
+          if (!musicOn) {
+            void startMusic(false);
+          }
+        }, 700);
       }
     }
     syncMusicButtons();

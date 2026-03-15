@@ -327,13 +327,13 @@
               <strong>Three county service podium</strong>
             </div>
             <div class="podium-graph" aria-hidden="true">
-              <div class="podium podium-orange" style="--bar-height: 72%">
+              <div class="podium podium-orange" style="--bar-height: 72%; --podium-delay: 0.08s;">
                 <span>Orange</span>
               </div>
-              <div class="podium podium-seminole" style="--bar-height: 88%">
+              <div class="podium podium-seminole" style="--bar-height: 88%; --podium-delay: 0.18s;">
                 <span>Seminole</span>
               </div>
-              <div class="podium podium-volusia" style="--bar-height: 66%">
+              <div class="podium podium-volusia" style="--bar-height: 66%; --podium-delay: 0.28s;">
                 <span>Volusia</span>
               </div>
             </div>
@@ -348,6 +348,8 @@
               <strong>55 ft equipment advantage</strong>
             </div>
             <div class="reach-graph" aria-hidden="true">
+              <div class="reach-aura"></div>
+              <div class="reach-scan"></div>
               <div class="reach-column">
                 <div class="reach-fill" style="--fill-height: 84%"></div>
                 <strong>55 ft</strong>
@@ -367,17 +369,17 @@
               <strong>Fast estimate and emergency flow</strong>
             </div>
             <div class="path-graph" aria-hidden="true">
-              <div class="path-step is-active">
+              <div class="path-step is-active" style="--path-delay: 0s;">
                 <span>01</span>
                 <p>Call Bob or Dawn</p>
               </div>
               <div class="path-rail"></div>
-              <div class="path-step is-active">
+              <div class="path-step is-active" style="--path-delay: 0.8s;">
                 <span>02</span>
                 <p>Free estimate</p>
               </div>
               <div class="path-rail"></div>
-              <div class="path-step is-active">
+              <div class="path-step is-active" style="--path-delay: 1.6s;">
                 <span>03</span>
                 <p>Schedule the work</p>
               </div>
@@ -579,7 +581,9 @@
       <source src="./assets/voice/bob-site-intro.wav" type="audio/wav" />
     </audio>
 
-    <audio id="musicBed" preload="auto" loop></audio>
+    <audio id="musicBed" preload="auto" loop>
+      <source src="./assets/music/bob-canopy-score.mp3" type="audio/mpeg" />
+    </audio>
 
     <script src="./assets/vendor/paper-full.min.js"></script>
     <script src="./assets/vendor/paper-director.js"></script>
