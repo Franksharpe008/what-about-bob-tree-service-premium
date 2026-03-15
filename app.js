@@ -20,6 +20,8 @@
   const musicTrack = "./assets/music/bob-canopy-score.mp3";
   let musicReady = false;
   let musicOn = false;
+  let pendingMusicStart = false;
+  let hasEntered = false;
   const searchParams = new URLSearchParams(window.location.search);
 
   if (musicBed) {
@@ -28,6 +30,9 @@
     musicBed.addEventListener("canplaythrough", () => {
       musicReady = true;
       syncMusicButtons();
+      if (pendingMusicStart && !musicOn) {
+        startMusic(false);
+      }
     });
     musicBed.addEventListener("error", () => {
       musicReady = false;
@@ -35,15 +40,35 @@
     });
   }
 
+  if (voiceIntro) {
+    voiceIntro.volume = 1;
+    voiceIntro.addEventListener("play", () => {
+      if (musicBed && musicOn) {
+        musicBed.volume = 0.18;
+      }
+    });
+    const restoreMusicVolume = () => {
+      if (musicBed && musicOn) {
+        musicBed.volume = 0.32;
+      }
+    };
+    voiceIntro.addEventListener("ended", restoreMusicVolume);
+    voiceIntro.addEventListener("pause", restoreMusicVolume);
+  }
+
   function syncMusicButtons() {
     musicButtons.forEach((button) => {
       if (!button) return;
-      if (!musicReady) {
+      if (!musicBed) {
         button.disabled = true;
         button.textContent = "Music unavailable";
         return;
       }
       button.disabled = false;
+      if (!musicReady && !musicOn) {
+        button.textContent = "Music loading";
+        return;
+      }
       button.textContent = musicOn ? "Music on" : "Music off";
     });
   }
@@ -60,33 +85,61 @@
     curtain?.classList.add("is-open");
   }
 
-  async function playIntro() {
-    if (!voiceIntro) {
-      openCurtain();
-      return;
-    }
+  async function startMusic(deferIfNeeded = true) {
+    if (!musicBed) return;
+    if (musicOn) return;
     try {
-      await voiceIntro.play();
-      openCurtain();
+      await musicBed.play();
+      musicOn = true;
+      pendingMusicStart = false;
     } catch {
-      openCurtain();
-    }
-  }
-
-  async function toggleMusic() {
-    if (!musicBed || !musicReady) return;
-    if (musicOn) {
-      musicBed.pause();
       musicOn = false;
-    } else {
-      try {
-        await musicBed.play();
-        musicOn = true;
-      } catch {
-        musicOn = false;
+      if (deferIfNeeded) {
+        pendingMusicStart = true;
+        musicBed.load();
       }
     }
     syncMusicButtons();
+  }
+
+  async function toggleMusic() {
+    if (!musicBed) return;
+    if (musicOn) {
+      musicBed.pause();
+      musicOn = false;
+      pendingMusicStart = false;
+    } else {
+      await startMusic(true);
+    }
+    syncMusicButtons();
+  }
+
+  async function playIntroOnly() {
+    if (!voiceIntro) return;
+    voiceIntro.currentTime = 0;
+    try {
+      await voiceIntro.play();
+    } catch {
+      return;
+    }
+  }
+
+  async function enterExperience() {
+    if (hasEntered) {
+      if (voiceIntro?.paused) {
+        await playIntroOnly();
+      }
+      if (!musicOn) {
+        await startMusic(true);
+      }
+      return;
+    }
+
+    hasEntered = true;
+    const introPromise = playIntroOnly();
+    const musicPromise = startMusic(true);
+    openCurtain();
+    await Promise.allSettled([introPromise, musicPromise]);
   }
 
   function dispatchScene(section) {
@@ -293,9 +346,26 @@
   }
 
   function mountAudioControls() {
-    enterButton?.addEventListener("click", openCurtain);
-    playIntroButtons.forEach((button) => button.addEventListener("click", playIntro));
+    enterButton?.addEventListener("click", async (event) => {
+      event.stopPropagation();
+      await enterExperience();
+    });
+    playIntroButtons.forEach((button) =>
+      button.addEventListener("click", async (event) => {
+        event.stopPropagation();
+        if (!hasEntered) {
+          await enterExperience();
+          return;
+        }
+        await playIntroOnly();
+      })
+    );
     musicButtons.forEach((button) => button.addEventListener("click", toggleMusic));
+    curtain?.addEventListener("click", async (event) => {
+      const interactive = event.target.closest("button, a, input, textarea, select");
+      if (interactive) return;
+      await enterExperience();
+    });
   }
 
   window.addEventListener("scroll", setScrollDepth, { passive: true });
@@ -308,6 +378,7 @@
   setScrollDepth();
 
   if (searchParams.get("preview") === "1") {
+    hasEntered = true;
     openCurtain();
   }
 

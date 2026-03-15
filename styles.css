@@ -183,6 +183,7 @@ body::before {
     linear-gradient(180deg, rgba(10, 22, 14, 0.95), rgba(8, 18, 12, 0.86));
   box-shadow: var(--shadow-strong);
   text-align: center;
+  cursor: pointer;
 }
 
 .launch-mark {
@@ -210,6 +211,14 @@ body::before {
 .launch-card p {
   color: var(--mist);
   line-height: 1.78;
+}
+
+.launch-hint {
+  margin: 1rem 0 1.6rem;
+  font-size: 0.86rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(235, 241, 233, 0.72);
 }
 
 .launch-actions,
