@@ -43,6 +43,10 @@
     "page_proof": "/Users/franksharpe/Documents/New project/output/what-about-bob-redesign-2026-03-15/final-proof-full.png",
     "pdf_snapshot": "/Users/franksharpe/Documents/New project/output/what-about-bob-redesign-2026-03-15/what-about-bob-tree-service-premium-preview.pdf"
   },
+  "publishing": {
+    "github_url": "https://github.com/Franksharpe008/what-about-bob-tree-service-premium",
+    "live_url": "https://what-about-bob-tree-service-premium.vercel.app/"
+  },
   "verification": {
     "local_preview_url": "http://127.0.0.1:4318/?preview=1",
     "browser_checks": [
