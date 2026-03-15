@@ -16,6 +16,8 @@
   const atlasSvg = document.getElementById("countyAtlas");
   const countyCards = document.getElementById("countyCards");
   const cityCloud = document.getElementById("cityCloud");
+  const ENTRY_MUSIC_VOLUME = 0.42;
+  const FULL_MUSIC_VOLUME = 0.52;
 
   let musicReady = false;
   let musicOn = false;
@@ -25,7 +27,7 @@
   const searchParams = new URLSearchParams(window.location.search);
 
   if (musicBed) {
-    musicBed.volume = 0.4;
+    musicBed.volume = FULL_MUSIC_VOLUME;
     const markMusicReady = () => {
       musicReady = true;
       syncMusicButtons();
@@ -57,12 +59,12 @@
     voiceIntro.volume = 1;
     voiceIntro.addEventListener("play", () => {
       if (musicBed && musicOn) {
-        musicBed.volume = 0.24;
+        musicBed.volume = ENTRY_MUSIC_VOLUME;
       }
     });
     const restoreMusicVolume = () => {
       if (musicBed && musicOn) {
-        musicBed.volume = 0.4;
+        musicBed.volume = FULL_MUSIC_VOLUME;
       }
     };
     voiceIntro.addEventListener("ended", restoreMusicVolume);
@@ -98,6 +100,15 @@
     curtain?.classList.add("is-open");
   }
 
+  function warmAudio() {
+    if (voiceIntro) {
+      voiceIntro.load();
+    }
+    if (musicBed) {
+      musicBed.load();
+    }
+  }
+
   async function startMusic(deferIfNeeded = true) {
     if (!musicBed) return;
     if (musicOn) return;
@@ -122,6 +133,24 @@
       }
     }
     syncMusicButtons();
+  }
+
+  async function startEntryAudio() {
+    const tasks = [];
+    if (voiceIntro) {
+      voiceIntro.currentTime = 0;
+      tasks.push(
+        voiceIntro.play().catch(() => {
+          return null;
+        })
+      );
+    }
+    if (musicBed) {
+      musicBed.currentTime = 0;
+      musicBed.volume = ENTRY_MUSIC_VOLUME;
+      tasks.push(startMusic(true));
+    }
+    await Promise.allSettled(tasks);
   }
 
   async function toggleMusic() {
@@ -158,10 +187,20 @@
     }
 
     hasEntered = true;
-    const introPromise = playIntroOnly();
-    const musicPromise = startMusic(true);
     openCurtain();
-    await Promise.allSettled([introPromise, musicPromise]);
+    await startEntryAudio();
+  }
+
+  async function handleCurtainEntry(event) {
+    const interactive = event.target.closest("button, a, input, textarea, select");
+    if (interactive && event.currentTarget === curtain) return;
+    if (event.type === "pointerdown" && event.currentTarget === enterButton) {
+      event.preventDefault();
+    }
+    if (event.currentTarget === enterButton || event.currentTarget === curtain) {
+      event.stopPropagation();
+    }
+    await enterExperience();
   }
 
   function dispatchScene(section) {
@@ -368,10 +407,8 @@
   }
 
   function mountAudioControls() {
-    enterButton?.addEventListener("click", async (event) => {
-      event.stopPropagation();
-      await enterExperience();
-    });
+    enterButton?.addEventListener("pointerdown", handleCurtainEntry);
+    enterButton?.addEventListener("click", handleCurtainEntry);
     playIntroButtons.forEach((button) =>
       button.addEventListener("click", async (event) => {
         event.stopPropagation();
@@ -383,11 +420,7 @@
       })
     );
     musicButtons.forEach((button) => button.addEventListener("click", toggleMusic));
-    curtain?.addEventListener("click", async (event) => {
-      const interactive = event.target.closest("button, a, input, textarea, select");
-      if (interactive) return;
-      await enterExperience();
-    });
+    curtain?.addEventListener("click", handleCurtainEntry);
   }
 
   window.addEventListener("scroll", setScrollDepth, { passive: true });
@@ -398,6 +431,7 @@
   mountTilt();
   mountAtlas();
   setScrollDepth();
+  warmAudio();
 
   if (searchParams.get("preview") === "1") {
     hasEntered = true;

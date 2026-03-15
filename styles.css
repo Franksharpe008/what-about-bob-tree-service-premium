@@ -162,6 +162,9 @@ body::before {
   display: grid;
   place-items: center;
   padding: 1.2rem;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
   background: rgba(4, 10, 7, 0.84);
   backdrop-filter: blur(30px);
   transition: opacity 420ms ease, visibility 420ms ease;
@@ -174,7 +177,9 @@ body::before {
 
 .launch-card {
   width: min(680px, 100%);
+  max-height: calc(100dvh - 2.4rem);
   padding: 2.4rem;
+  overflow-y: auto;
   border-radius: 34px;
   border: 1px solid var(--line);
   background:
@@ -1633,8 +1638,48 @@ section {
     width: min(100vw - 1rem, 100%);
   }
 
+  .launch-curtain {
+    padding: 0.75rem;
+    place-items: start center;
+  }
+
   .launch-card {
-    padding: 1.7rem;
+    max-height: calc(100dvh - 1.5rem);
+    padding: 1.25rem;
+    border-radius: 26px;
+  }
+
+  .launch-mark {
+    margin-bottom: 0.55rem;
+  }
+
+  .launch-card h1 {
+    font-size: clamp(2rem, 11vw, 3.35rem);
+    line-height: 0.96;
+  }
+
+  .launch-card p {
+    font-size: 0.96rem;
+    line-height: 1.58;
+  }
+
+  .launch-hint {
+    margin: 0.75rem 0 1rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+  }
+
+  .launch-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.7rem;
+    margin-top: 1rem;
+  }
+
+  .launch-actions .primary-button,
+  .launch-actions .secondary-button,
+  .launch-actions .ghost-button {
+    width: 100%;
   }
 
   .hero-stage,
@@ -1698,5 +1743,35 @@ section {
     background: rgba(8, 18, 12, 0.94);
     color: var(--ink);
     border: 1px solid var(--line);
+  }
+}
+
+@media (max-width: 430px) {
+  .launch-curtain {
+    padding: 0.55rem;
+  }
+
+  .launch-card {
+    max-height: calc(100dvh - 1.1rem);
+    padding: 1rem;
+  }
+
+  .launch-card h1 {
+    font-size: clamp(1.72rem, 10vw, 2.65rem);
+  }
+
+  .launch-card p {
+    font-size: 0.9rem;
+  }
+
+  .launch-mark .crest-large {
+    width: 146px;
+    height: 146px;
+  }
+
+  .eyebrow {
+    margin-bottom: 0.5rem;
+    font-size: 0.66rem;
+    letter-spacing: 0.13em;
   }
 }
