@@ -2,6 +2,11 @@
 
 Premium single-page website concept for a Central Florida tree-service business.
 
+## Live Preview
+
+- Public site: [https://what-about-bob-tree-service-premium.vercel.app/](https://what-about-bob-tree-service-premium.vercel.app/)
+- GitHub repo: [https://github.com/Franksharpe008/what-about-bob-tree-service-premium](https://github.com/Franksharpe008/what-about-bob-tree-service-premium)
+
 ## Deliverables
 
 - Final-state homepage

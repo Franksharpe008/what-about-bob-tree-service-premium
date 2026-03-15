@@ -10,4 +10,5 @@ assets/music/*-lyrics.txt
 assets/music/*.json
 archive_to_drive.mjs
 drive-archive-receipt.json
+brevo-send-receipt.json
 .vercel
